@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: icyujf18g-python-gitops
+  description: This is GitOps manifest for icyujf18g-python   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=icyujf18g-python
+    backstage.io/kubernetes-id: icyujf18g-python 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: icyujf18g-python   
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:icyujf18g-python
